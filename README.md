@@ -72,6 +72,8 @@ The weighted least squares solution for x can be found through the following for
 
 For simplicity, it can be assumed that the error sources of each satellite are not correlated, which means that $$W$$ is a diagonal matrix, and its diagonal elements are the reciprocal of the variance ($$σ^2s$$) of the corresponding satellite. Although this assumption may not be completely strict, it is a reasonable approximation for practical implementation.
 
+The filtered positioning error is ploted as below:
+![alt text](Q2/positioning_error.png)
 
 ## 4. The Technical and Operational Challenges of Using Low Earth Orbit Satellites for Global Navigation
 
