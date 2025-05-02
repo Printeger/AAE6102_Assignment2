@@ -58,7 +58,12 @@ Comparative Analysis: Accuracy, Reliability, and Feasibility
 The choice of GNSS technique for smartphones hinges on balancing accuracy, coverage, and practicality. While DGNSS and RTK cater to traditional navigation, PPP and PPP-RTK unlock global precision but face smartphone-specific hurdles like antenna limitations and processing demands. As dual-frequency GNSS chips become mainstream (e.g., Broadcom BCM47755 in Xiaomi Mi 8), PPP-RTK and enhanced sensor fusion (e.g., IMU integration) promise to bridge the gap, enabling centimeter-level smartphone navigation for autonomous systems and smart cities. For now, developers must tailor solutions to environmental constraints and user needs, leveraging hybrid approaches to maximize reliability in our increasingly location-driven world.
 
 # Task 2. GNSS in Urban Areas
+## Method
+1. Satellite Visibility Check: For each satellite, compute its azimuth and elevation from the ground truth. Compare elevation with the skymask's minimum elevation at that azimuth to exclude blocked satellites.
 
+2. Weighted Least Squares (WLS): Use elevation-dependent weights (higher elevation = higher weight) to reduce multipath effects.
+
+3. Iterative Positioning: Estimate the receiver's position iteratively using the filtered satellites and WLS.
 
 # Task 3 GPS RAIM (Receiver Autonomous Integrity Monitoring)
 The basic linearized GPS measurement equation can be expressed as $$y = G ⋅ x + ε$$, where $$x$$ is the four-dimensional position vector, $$y$$ is the original pseudo-range measurement value minus the expected distance value based on the user and satellite positions, $$G$$ is the observation matrix, and ε is the error vector in y.
